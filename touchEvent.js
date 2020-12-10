@@ -30,7 +30,7 @@ function touchEndEvent(event){
     let newParentElem = document.elementFromPoint(touch.pageX - window.pageXOffset,
                                                     touch.pageY - window.pageYOffset);
     if(newParentElem.className = "droppable-elem"){
-        newParentElem.appendChild(DroppedElem);
+        newParentElem.appendChild(droppedElem);
     }
 }
 {
