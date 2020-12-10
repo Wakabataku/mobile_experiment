@@ -34,7 +34,8 @@ function touchEndEvent(event){
     }
 }
 {
-    let draggableItems = $(".draggable-elem");
+    // let draggableItems = $(".draggable-elem");
+    let draggable = document.getElementsByClassName("draggable-elem");
     for(let i=0; i<draggableItems.length; ++i){
         let item = draggableItems[i];
         item.addEventListener('touchstart', touchStartEvent, false);
