@@ -27,15 +27,14 @@ function touchEndEvent(event){
     //ドロップした位置にあるドロップ可能なエレメントに親子付けする
     let touch = event.changedTouches[0];
     //スクロール分を加味した座標に存在するエレメントを新しい親とする
-    let newParentElem = document.elementFromPoint(touch.pageX - window.pageXOffset,
-                                                    touch.pageY - window.pageYOffset);
+    let newParentElem = document.elementFromPoint(touch.pageX - window.pageXOffset, touch.pageY - window.pageYOffset);
     if(newParentElem.className = "droppable-elem"){
         newParentElem.appendChild(droppedElem);
     }
 }
 {
-    // let draggableItems = $(".draggable-elem");
-    let draggable = document.getElementsByClassName("draggable-elem");
+    let draggableItems = $(".draggable-elem");
+    // let draggable = document.getElementsByClassName("draggable-elem");
     for(let i=0; i<draggableItems.length; ++i){
         let item = draggableItems[i];
         item.addEventListener('touchstart', touchStartEvent, false);
