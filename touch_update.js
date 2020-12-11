@@ -17,6 +17,9 @@ initialDocPos = $(this).position();
 
 function touchMoveEvent(event){
     event.preventDefault();
+    //対象移動中にクローンの生成
+    let className = event.target.className;
+    className.clone().insertAfter('.className').addClass('cloned');
 
     //ドラッグ中のアイテムをカーソルの位置に追従
     let draggedElem = event.target;
@@ -25,9 +28,7 @@ function touchMoveEvent(event){
     event.target.style.top = (touch.pageY - window.pageYOffset - draggedElem.offsetHeight/2) + "px";
     event.target.style.left = (touch.pageX - window.pageXOffset - draggedElem.offsetWidth/2) + "px";
 
-    //対象移動中にクローンの生成
-    let className = event.target.className;
-    $('.className').clone().insertAfter('.className').addClass('cloned');
+
 
 }
 
