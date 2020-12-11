@@ -26,7 +26,7 @@ function touchMoveEvent(event){
     event.target.style.left = (touch.pageX - window.pageXOffset - draggedElem.offsetWidth/2) + "px";
 
     //対象移動中にクローンの生成
-    event.target.clone().insertAfter(this).addClass('cloned');
+    event.target.clone().insertAfter(event.target.className).addClass('cloned');
 
 }
 
