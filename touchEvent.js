@@ -14,6 +14,11 @@ function touchMoveEvent(event){
     event.target.style.top = (touch.pageY - window.pageYOffset - draggedElem.offsetHeight/2) + "px";
     event.target.style.left = (touch.pageX - window.pageXOffset - draggedElem.offsetWidth/2) + "px";
 }
+function touchMoveEvent(event){
+    event.oreventDefault();
+
+    
+}
 
 function touchEndEvent(event){
     event.preventDefault();
@@ -32,6 +37,7 @@ function touchEndEvent(event){
         newParentElem.appendChild(droppedElem);
     }
 }
+
 {
     //ドラッグ可能なアイテムへのタッチイベントの設定
     let draggableItems = $(".draggable-elem");
