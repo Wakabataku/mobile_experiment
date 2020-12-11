@@ -1,6 +1,6 @@
 $('.draggable-elem').bind({
     'touchstart mousedown': function(event){
-        event.preventDefaul();
+        event.preventDefault();
 
         let eventPos = {};
         if(event.type == 'touchstart'){
@@ -16,7 +16,7 @@ $('.draggable-elem').bind({
         this.initialDocPos = $(this).position();
         this.touching = true;
     },
-    'touchmove': function(event){
+    'touchmove mousemove': function(event){
         if(!this.touching) return;
         event.preventDefault();
 
@@ -35,7 +35,7 @@ $('.draggable-elem').bind({
 
         $(this).css({left: left, top: top});
     },
-    'touchend': function(event){
+    'touchend mouseup': function(event){
         if(!this.touching) return;
         this.touching = false;
         delete this.touching;
