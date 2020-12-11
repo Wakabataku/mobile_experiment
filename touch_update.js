@@ -25,6 +25,9 @@ function touchMoveEvent(event){
     event.target.style.top = (touch.pageY - window.pageYOffset - draggedElem.offsetHeight/2) + "px";
     event.target.style.left = (touch.pageX - window.pageXOffset - draggedElem.offsetWidth/2) + "px";
 
+    //対象移動中にクローンの生成
+    event.target.clone().insertAfter(this).addClass('cloned');
+
 }
 
 function touchEndEvent(event){
@@ -33,6 +36,9 @@ function touchEndEvent(event){
     event.target.style.position = "";
     event.target.style.top = eventPos.y;
     event.target.style.left = eventPos.x;
+
+    //クローンの削除
+    $('.cloned').removed();
 }
 
 
