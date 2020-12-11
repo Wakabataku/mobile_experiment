@@ -6,8 +6,8 @@ function touchStartEvent(event){
     event.preventDefault();
 
     let eventPos = {
-        x: event.changedTouches[0].pageX,
-        y: event.changedTouches[0].pageY
+        x: event.changedTouches[0].clientX,
+        y: event.changedTouches[0].clientY
     };
 
 //タッチした初期情報の取得
@@ -30,8 +30,8 @@ function touchMoveEvent(event){
 
     let eventPos;
     eventPos = {
-        x: event.originalEvent.changedTouches[0].pageX,
-        y: event.originalEvent.changeTouches[0].pageY
+        x: event.originalEvent.changedTouches[0].clientX,
+        y: event.originalEvent.changeTouches[0].clientY
     };
 
     let left = initialDocPos.lef + (eventPos.x - initialTouchPos.x);
