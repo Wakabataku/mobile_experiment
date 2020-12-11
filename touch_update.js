@@ -28,8 +28,16 @@ function touchMoveEvent(event){
     event.target.style.top = (touch.pageY - window.pageYOffset - draggedElem.offsetHeight/2) + "px";
     event.target.style.left = (touch.pageX - window.pageXOffset - draggedElem.offsetWidth/2) + "px";
 
+    let eventPos;
+    eventPos = {
+        x: event.originalEvent.changedTouches[0].pageX,
+        y: event.originalEvent.changeTouches[0].pageY
+    };
 
+    let left = initialDocPos.lef + (eventPos.x - initialTouchPos.x);
+    let top = initialDocPos.top + (eventPos.y - initialTouchPos.y)
 
+    event.target.css({left: left, top: top});
 }
 
 function touchEndEvent(event){
