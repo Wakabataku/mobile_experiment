@@ -12,7 +12,7 @@ function touchMoveEvent(event){
     let touch = event.changedTouches[0];
     event.target.style.position = "fixed";
     event.target.style.top = (touch.pageY - window.pageYOffset - draggedElem.offsetHeight/2) + "px";
-    event.target.style.left = (touch.PageX - window.pageXOffset - draggedElem.offsetWidth/2) + "px";
+    event.target.style.left = (touch.pageX - window.pageXOffset - draggedElem.offsetWidth/2) + "px";
 }
 
 function touchEndEvent(event){
