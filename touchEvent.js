@@ -25,12 +25,12 @@ function touchEndEvent(event){
     event.target.style.left = "";
 
     //ドロップした位置にあるドロップ可能なエレメントに親子付けする
-    let touch = event.changedTouches[0];
-    //スクロール分を加味した座標に存在するエレメントを新しい親とする
-    let newParentElem = document.elementFromPoint(touch.pageX - window.pageXOffset, touch.pageY - window.pageYOffset);
-    if(newParentElem.className = "droppable-elem"){
-        newParentElem.appendChild(droppedElem);
-    }
+    // let touch = event.changedTouches[0];
+    // //スクロール分を加味した座標に存在するエレメントを新しい親とする
+    // let newParentElem = document.elementFromPoint(touch.pageX - window.pageXOffset, touch.pageY - window.pageYOffset);
+    // if(newParentElem.className = "droppable-elem"){
+    //     newParentElem.appendChild(droppedElem);
+    // }
 }
 {
     //ドラッグ可能なアイテムへのタッチイベントの設定
