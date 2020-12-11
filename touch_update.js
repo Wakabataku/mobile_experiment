@@ -27,7 +27,7 @@ function touchMoveEvent(event){
 
     //対象移動中にクローンの生成
     let className = event.target.className;
-    className.clone().insertAfter(className).addClass('cloned');
+    $('.className').clone().insertAfter('.className').addClass('cloned');
 
 }
 
