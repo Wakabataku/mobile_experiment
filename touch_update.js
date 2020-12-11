@@ -22,11 +22,11 @@ function touchMoveEvent(event){
     // className.clone().insertAfter('.className').addClass('cloned');
 
     //ドラッグ中のアイテムをカーソルの位置に追従
-    let draggedElem = event.target;
-    let touch = event.changedTouches[0];
-    event.target.style.position = "fixed";
-    event.target.style.top = (touch.pageY - window.pageYOffset - draggedElem.offsetHeight/2) + "px";
-    event.target.style.left = (touch.pageX - window.pageXOffset - draggedElem.offsetWidth/2) + "px";
+    // let draggedElem = event.target;
+    // let touch = event.changedTouches[0];
+    // event.target.style.position = "fixed";
+    // event.target.style.top = (touch.pageY - window.pageYOffset - draggedElem.offsetHeight/2) + "px";
+    // event.target.style.left = (touch.pageX - window.pageXOffset - draggedElem.offsetWidth/2) + "px";
 
     let eventPos;
     eventPos = {
