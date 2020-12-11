@@ -6,8 +6,8 @@ function touchStartEvent(event){
     event.preventDefault();
 
     //タッチしたときにクローン作成
-    let className = event.target.className;
-    className.clone().insertAfter('.className').addClass('cloned');
+    let className = $(this).className;
+    className.clone().insertAfter(this).addClass('cloned');
 
 
     let eventPos = {
@@ -17,7 +17,7 @@ function touchStartEvent(event){
 
 //タッチした初期情報の取得
 initialTouchPos = eventPos;
-initialDocPos = $(this).position();
+initialDocPos = event.target.position();
 }
 
 function touchMoveEvent(event){
@@ -49,7 +49,7 @@ function touchEndEvent(event){
 let draggableItems = $(".draggable-elem");
 for(let i=0;i<draggableItems.length;++i){
     let item = draggableItems[i];
-    item.addEventListener('touchstart', touchStartEvent, false);
-    item.addEventListener('touchmove', touchMoveEvent, false);
-    item.addEventListener('touchend', touchEndEvent, false);
+    item.addEventListener('touchstart', {name: draggableItems, handleEvent: touchStartEvent}, false);
+    item.addEventListener('touchmove', {name: draggableItems, handleEvent: touchMoveEvent}, false);
+    item.addEventListener('touchend', {name: draggableItems, handleEvent: touchEndEvent}, false);
 }
