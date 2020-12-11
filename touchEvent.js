@@ -33,6 +33,7 @@ function touchEndEvent(event){
     }
 }
 {
+    //ドラッグ可能なアイテムへのタッチイベントの設定
     let draggableItems = $(".draggable-elem");
     // let draggable = document.getElementsByClassName("draggable-elem");
     for(let i=0; i<draggableItems.length; ++i){
