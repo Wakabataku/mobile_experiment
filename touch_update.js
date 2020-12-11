@@ -18,8 +18,8 @@ initialDocPos = $(this).position();
 function touchMoveEvent(event){
     event.preventDefault();
     //対象移動中にクローンの生成
-    let className = event.target.className;
-    className.clone().insertAfter('.className').addClass('cloned');
+    // let className = event.target.className;
+    // className.clone().insertAfter('.className').addClass('cloned');
 
     //ドラッグ中のアイテムをカーソルの位置に追従
     let draggedElem = event.target;
@@ -40,7 +40,7 @@ function touchEndEvent(event){
     event.target.style.left = eventPos.x;
 
     //クローンの削除
-    $('.cloned').removed();
+    // $('.cloned').removed();
 }
 
 
