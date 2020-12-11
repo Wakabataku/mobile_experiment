@@ -5,6 +5,11 @@ function touchStartEvent(event){
     //タッチによる画面スクロールを止める
     event.preventDefault();
 
+    //タッチしたときにクローン作成
+    let className = event.target.className;
+    className.clone().insertAfter('.className').addClass('cloned');
+
+
     let eventPos = {
         x: event.changedTouches[0].clientX,
         y: event.changedTouches[0].clientY
@@ -17,27 +22,14 @@ initialDocPos = $(this).position();
 
 function touchMoveEvent(event){
     event.preventDefault();
-    //対象移動中にクローンの生成
-    // let className = event.target.className;
-    // className.clone().insertAfter('.className').addClass('cloned');
 
     //ドラッグ中のアイテムをカーソルの位置に追従
-    // let draggedElem = event.target;
-    // let touch = event.changedTouches[0];
-    // event.target.style.position = "fixed";
-    // event.target.style.top = (touch.pageY - window.pageYOffset - draggedElem.offsetHeight/2) + "px";
-    // event.target.style.left = (touch.pageX - window.pageXOffset - draggedElem.offsetWidth/2) + "px";
+    let draggedElem = event.target;
+    let touch = event.changedTouches[0];
+    event.target.style.position = "fixed";
+    event.target.style.top = (touch.pageY - window.pageYOffset - draggedElem.offsetHeight/2) + "px";
+    event.target.style.left = (touch.pageX - window.pageXOffset - draggedElem.offsetWidth/2) + "px";
 
-    let eventPos;
-    eventPos = {
-        x: event.originalEvent.changedTouches[0].clientX,
-        y: event.originalEvent.changeTouches[0].clientY
-    };
-
-    let left = initialDocPos.left + (eventPos.x - initialTouchPos.x);
-    let top = initialDocPos.top + (eventPos.y - initialTouchPos.y);
-
-    event.target.css({left: left, top: top});
 }
 
 function touchEndEvent(event){
