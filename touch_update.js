@@ -34,8 +34,8 @@ function touchMoveEvent(event){
         y: event.originalEvent.changeTouches[0].clientY
     };
 
-    let left = initialDocPos.lef + (eventPos.x - initialTouchPos.x);
-    let top = initialDocPos.top + (eventPos.y - initialTouchPos.y)
+    let left = initialDocPos.left + (eventPos.x - initialTouchPos.x);
+    let top = initialDocPos.top + (eventPos.y - initialTouchPos.y);
 
     event.target.css({left: left, top: top});
 }
