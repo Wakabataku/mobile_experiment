@@ -2,8 +2,6 @@ function touchStartEvent(event){
     //タッチによる画面スクロールを止める
     event.preventDefault();
 }
-
-
 function touchMoveEvent(event){
     event.preventDefault();
 
@@ -13,11 +11,6 @@ function touchMoveEvent(event){
     event.target.style.position = "fixed";
     event.target.style.top = (touch.pageY - window.pageYOffset - draggedElem.offsetHeight/2) + "px";
     event.target.style.left = (touch.pageX - window.pageXOffset - draggedElem.offsetWidth/2) + "px";
-}
-function touchMoveEvent(event){
-    event.oreventDefault();
-
-    
 }
 
 function touchEndEvent(event){
@@ -46,6 +39,6 @@ function touchEndEvent(event){
         let item = draggableItems[i];
         item.addEventListener('touchstart', touchStartEvent, false);
         item.addEventListener('touchmove', touchMoveEvent, false);
-        // item.addEventListener('touched', touchEndEvent, false);
+        item.addEventListener('touchend', touchEndEvent, false);
     }
 }
