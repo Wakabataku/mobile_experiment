@@ -8,7 +8,7 @@ function touchStartEvent(event){
     event.preventDefault();
 
     //タッチしたときにクローン作成
-    $(this).clone(true).attr('class','cloned').appendTo(".droppable-elem");
+    // $(this).clone(true).attr('class','cloned').appendTo(".droppable-elem");
     // className.clone().insertAfter(this).addClass('cloned');
 
 
@@ -51,8 +51,8 @@ function touchEndEvent(event){
 let draggableItems = $(".draggable-elem");
 for(let i=0;i<draggableItems.length;++i){
     let item = draggableItems[i];
-    // item.addEventListener('touchstart',draggableItems,touchStartEvent, false);
-    item.addEventListener('touchstart', {name: draggableItems, handleEvent: touchStartEvent}, false);
+    item.addEventListener('touchstart',draggableItems,touchStartEvent, false);
+    // item.addEventListener('touchstart', {name: draggableItems, handleEvent: touchStartEvent}, false);
     item.addEventListener('touchmove',draggableItems,touchMoveEvent, false);
     item.addEventListener('touchend',draggableItems,touchEndEvent, false);
     // item.addEventListener('touchstart', {name: draggableItems, handleEvent: touchStartEvent}, false);
