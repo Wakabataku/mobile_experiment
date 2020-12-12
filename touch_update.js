@@ -13,8 +13,8 @@ function touchStartEvent(event){
 
 
     let eventPos = {
-        x: event.changedTouches[0].clientX,
-        y: event.changedTouches[0].clientY
+        x: event.changedTouches[0].pageX,
+        y: event.changedTouches[0].pageY
     };
 
 //タッチした初期情報の取得
