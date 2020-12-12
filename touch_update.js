@@ -1,12 +1,14 @@
 //移動対象の初期位置,タッチ位置
 let initialDocPos, initialTouchPos;
+let i = 0;
 
 function touchStartEvent(event){
+    i++;
     //タッチによる画面スクロールを止める
     event.preventDefault();
 
     //タッチしたときにクローン作成
-    $(this).clone(true).appendTo(".droppable-elem");
+    $(this).clone(true).attr('class','cloned').appendTo(".droppable-elem");
     // className.clone().insertAfter(this).addClass('cloned');
 
 
