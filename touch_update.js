@@ -1,13 +1,12 @@
 //移動対象の初期位置,タッチ位置
 let initialDocPos, initialTouchPos;
-let i = 0;
 
 function touchStartEvent(event){
-    i++;
     //タッチによる画面スクロールを止める
     event.preventDefault();
 
     //タッチしたときにクローン作成
+    // $('.draggable-elem').clone(true).attr('class','cloned').appendTo(".droppable-elem");
     // $(this).clone(true).attr('class','cloned').appendTo(".droppable-elem");
     // className.clone().insertAfter(this).addClass('cloned');
 
@@ -51,10 +50,9 @@ function touchEndEvent(event){
 let draggableItems = $(".draggable-elem");
 for(let i=0;i<draggableItems.length;++i){
     let item = draggableItems[i];
-    item.addEventListener('touchstart',draggableItems,touchStartEvent, false);
-    // item.addEventListener('touchstart', {name: draggableItems, handleEvent: touchStartEvent}, false);
-    item.addEventListener('touchmove',draggableItems,touchMoveEvent, false);
-    item.addEventListener('touchend',draggableItems,touchEndEvent, false);
+    item.addEventListener('touchstart',touchStartEvent, false);
+    item.addEventListener('touchmove',touchMoveEvent, false);
+    item.addEventListener('touchend',touchEndEvent, false);
     // item.addEventListener('touchstart', {name: draggableItems, handleEvent: touchStartEvent}, false);
     // item.addEventListener('touchmove', {name: draggableItems, handleEvent: touchMoveEvent}, false);
     // item.addEventListener('touchend', {name: draggableItems, handleEvent: touchEndEvent}, false);
