@@ -7,7 +7,8 @@ function touchStartEvent(event){
 
     //タッチしたときにクローン作成
     let className = $(this).className;
-    className.clone().insertAfter(this).addClass('cloned');
+    className.clone(true).appendTo(".droppable-elem");
+    // className.clone().insertAfter(this).addClass('cloned');
 
 
     let eventPos = {
