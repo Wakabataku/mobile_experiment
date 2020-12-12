@@ -6,7 +6,7 @@ function touchStartEvent(event){
     event.preventDefault();
 
     //タッチしたときにクローン作成
-    // $('.draggable-elem').clone(true).attr('class','cloned').appendTo(".droppable-elem");
+    $('.draggable-elem').clone(true).attr('class','cloned').appendTo(".droppable-elem");
     // $(this).clone(true).attr('class','cloned').appendTo(".droppable-elem");
     // className.clone().insertAfter(this).addClass('cloned');
 
